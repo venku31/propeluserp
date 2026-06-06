@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:toy_item",
+ "creation": "2026-06-05 11:33:51.308157",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "toy_item",
+  "column_break_lfjk",
+  "description",
+  "section_break_aixh",
+  "table_uoqc"
+ ],
+ "fields": [
+  {
+   "fieldname": "toy_item",
+   "fieldtype": "Link",
+   "label": "Toy Item",
+   "options": "Item",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_lfjk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "toy_item.item_name",
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_aixh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_uoqc",
+   "fieldtype": "Table",
+   "options": "Assembly Process Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-06 22:37:18.923264",
+ "modified_by": "Administrator",
+ "module": "Propeluserp",
+ "name": "Assembly Master",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "description",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
