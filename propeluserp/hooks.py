@@ -5,6 +5,30 @@ app_description = "Propelus ERP"
 app_email = "venku31@gmail.com"
 app_license = "mit"
 
+# Fixtures: ensure custom fields are installed from the app instead of patches
+fixtures = [
+	{"doctype": "Custom Field",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Stock Entry-custom_column_break_atmq5",
+					"Subcontracting Order-mould_asset",
+					"Subcontracting Order-mould_target_location",
+					"Subcontracting Order-asset_movement",
+					"Stock Entry-mould_asset",
+					"Stock Entry-mould_target_location",
+					"Stock Entry-subcontracting_order",
+					"Stock Entry-asset_movement",
+					"Asset Movement-subcontracting_order",
+					"Asset Movement-stock_entry",
+				],
+			]
+		],
+	}
+]
+
 # Apps
 # ------------------
 
@@ -138,13 +162,11 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Stock Entry": {
+		"on_submit": "propeluserp.api.asset_movement_handler.on_stock_entry_submit",
+	},
+}
 
 # Scheduled Tasks
 # ---------------
