@@ -58,7 +58,7 @@ fixtures = [
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "propeluserp/public/scss/website"
-
+app_include_js = ["/assets/propeluserp/js/bom_override.js"]
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
 # webform_include_css = {"doctype": "public/css/doctype.css"}
@@ -161,14 +161,23 @@ fixtures = [
 # Document Events
 # ---------------
 # Hook on document methods and events
+doctype_js = {
+	"BOM": "public/js/bom_override.js",
+}
+
+override_whitelisted_methods = {
+	"frappe.desk.form.linked_with.cancel_all_linked_docs":
+		"propeluserp.api.bom_cancel.cancel_all_linked_docs",
+}
 
 doc_events = {
-	"Stock Entry": {
-		"on_submit": "propeluserp.api.asset_movement_handler.on_stock_entry_submit",
-	},
 	"BOM": {
 		"before_cancel": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_bom",
+		"after_cancel": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_bom",
 		"on_trash": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_bom",
+	},
+	"Stock Entry": {
+		"on_submit": "propeluserp.api.asset_movement_handler.on_stock_entry_submit",
 	},
 }
 
