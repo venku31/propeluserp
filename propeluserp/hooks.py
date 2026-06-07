@@ -27,6 +27,31 @@ fixtures = [
 			]
 		],
 	}
+	,
+	{"doctype": "Property Setter",
+		"filters": [
+			[
+				"name",
+				"in",
+				[
+					"BOM-with_operations-allow_on_submit",
+					"BOM-operations-allow_on_submit",
+					"BOM-items-allow_on_submit",
+					"BOM-raw_material_cost-allow_on_submit",
+					"BOM-operating_cost-allow_on_submit",
+					"BOM-operating_cost-allow_on_submit",
+					"BOM-base_secondary_items_cost-allow_on_submit",
+					"BOM-secondary_items_cost-allow_on_submit",
+					"BOM-base_raw_material_cost-allow_on_submit",
+					"BOM-raw_material_cost-allow_on_submit",
+					"BOM-items-allow_on_submit",
+					"BOM-operations-allow_on_submit",
+					"BOM-with_operations-allow_on_submit",
+					"BOM-transfer_material_against-allow_on_submit",
+				],
+			],
+		],
+	}
 ]
 
 # Apps
