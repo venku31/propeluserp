@@ -19,7 +19,7 @@ fixtures = [
 					"Subcontracting Order-asset_movement",
 					"Stock Entry-mould_asset",
 					"Stock Entry-mould_target_location",
-					"Stock Entry-subcontracting_order",
+					
 					"Stock Entry-asset_movement",
 					"Asset Movement-subcontracting_order",
 					"Asset Movement-stock_entry",
@@ -165,6 +165,10 @@ fixtures = [
 doc_events = {
 	"Stock Entry": {
 		"on_submit": "propeluserp.api.asset_movement_handler.on_stock_entry_submit",
+	},
+	"BOM": {
+		"before_cancel": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_bom",
+		"on_trash": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_bom",
 	},
 }
 
