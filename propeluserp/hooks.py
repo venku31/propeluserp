@@ -188,6 +188,8 @@ app_include_js = ["/assets/propeluserp/js/bom_override.js"]
 # Hook on document methods and events
 doctype_js = {
 	"BOM": "public/js/bom_override.js",
+	"Item": "public/js/item_asset.js",
+	"Stock Entry": "public/js/stock_entry_asset_filters.js",
 }
 
 override_whitelisted_methods = {
@@ -315,4 +317,3 @@ doc_events = {
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-
