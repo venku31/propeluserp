@@ -17,9 +17,8 @@ fixtures = [
 					"Subcontracting Order-mould_asset",
 					"Subcontracting Order-mould_target_location",
 					"Subcontracting Order-asset_movement",
-					"Stock Entry-mould_asset",
 					"Stock Entry-mould_target_location",
-					
+					"Stock Entry-custom_mould_assets",
 					"Stock Entry-asset_movement",
 					"Asset Movement-subcontracting_order",
 					"Asset Movement-stock_entry",
@@ -200,12 +199,19 @@ override_whitelisted_methods = {
 doc_events = {
 	"BOM": {
 		"before_cancel": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_bom",
+
 		"after_cancel": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_bom",
 		"on_trash": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_bom",
 	},
 	"Stock Entry": {
+		"before_save": "propeluserp.api.asset_movement_handler.on_stock_entry_before_save",
+		"validate": "propeluserp.api.asset_movement_handler.on_stock_entry_validate",
 		"on_submit": "propeluserp.api.asset_movement_handler.on_stock_entry_submit",
+		"before_cancel": "propeluserp.api.asset_movement_handler.on_stock_entry_cancel",
 	},
+
+
+
 }
 
 # Scheduled Tasks
