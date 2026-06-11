@@ -38,19 +38,19 @@ def _link_asset_movement_to_source(reference_doctype, reference_name, asset_move
     if frappe.db.get_value(reference_doctype, reference_name, "asset_movement") != asset_movement_name:
         frappe.db.set_value(reference_doctype, reference_name, "asset_movement", asset_movement_name, update_modified=False)
 
-    if reference_doctype == "Stock Entry" and doc:
-        subcontracting_order = doc.get("subcontracting_order")
-        if subcontracting_order:
-            try:
-                frappe.db.set_value(
-                    "Subcontracting Order",
-                    subcontracting_order,
-                    "asset_movement",
-                    asset_movement_name,
-                    update_modified=False,
-                )
-            except Exception:
-                pass
+    # if reference_doctype == "Stock Entry" and doc:
+    #     subcontracting_order = doc.get("subcontracting_order")
+    #     if subcontracting_order:
+    #         try:
+    #             frappe.db.set_value(
+    #                 "Subcontracting Order",
+    #                 subcontracting_order,
+    #                 "asset_movement",
+    #                 asset_movement_name,
+    #                 update_modified=False,
+    #             )
+    #         except Exception:
+    #             pass
 
 
 
@@ -156,10 +156,10 @@ def _create_asset_movement(
             })
 
 
-        if reference_doctype == "Stock Entry":
-            am_data["stock_entry"] = reference_name
-            if doc and doc.get("subcontracting_order"):
-                am_data["subcontracting_order"] = doc.subcontracting_order
+        # if reference_doctype == "Stock Entry":
+        #     am_data["stock_entry"] = reference_name
+        #     if doc and doc.get("subcontracting_order"):
+        #         am_data["subcontracting_order"] = doc.subcontracting_order
 
         am = frappe.get_doc(am_data)
         am.flags.ignore_mandatory = True

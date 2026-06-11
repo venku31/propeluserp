@@ -17,11 +17,10 @@ fixtures = [
 					"Subcontracting Order-mould_asset",
 					"Subcontracting Order-mould_target_location",
 					"Subcontracting Order-asset_movement",
+					"Stock Entry-custom_column_break_0bkfh",
 					"Stock Entry-mould_target_location",
 					"Stock Entry-custom_mould_assets",
 					"Stock Entry-asset_movement",
-					"Asset Movement-subcontracting_order",
-					"Asset Movement-stock_entry",
 				],
 			]
 		],
