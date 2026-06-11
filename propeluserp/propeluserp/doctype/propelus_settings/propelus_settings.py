@@ -19,7 +19,19 @@ def apply_ignore_links_for_bom(doc, event=None):
 		_clear_bom_references(doc)
 
 
+def apply_ignore_links_for_asset_movement(doc, event=None):
+	"""Ignore link checks when cancelling/deleting Asset Movement.
+
+	Requested behavior: "On delete Asset Movement set ignore_links".
+	We also apply it for "before_cancel" to avoid link-blocking during cancel flows.
+	"""
+	if event in ("before_cancel", "on_trash"):
+		doc.flags.ignore_links = True
+		doc.flags.ignore_permissions = True
+
+
 def _clear_bom_references(doc):
+
 	from frappe.model.dynamic_links import get_dynamic_link_map
 	from frappe.model.rename_doc import get_link_fields
 

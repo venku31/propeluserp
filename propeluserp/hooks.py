@@ -208,10 +208,13 @@ doc_events = {
 		"on_submit": "propeluserp.api.asset_movement_handler.on_stock_entry_submit",
 		"before_cancel": "propeluserp.api.asset_movement_handler.on_stock_entry_cancel",
 	},
-
-
+	"Asset Movement": {
+		"before_cancel": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_asset_movement",
+		"on_trash": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_asset_movement",
+	},
 
 }
+
 
 # Scheduled Tasks
 # ---------------
