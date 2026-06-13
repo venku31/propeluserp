@@ -12,19 +12,24 @@
   "machine",
   "shift",
   "mould_no",
-  "raw_material_used",
-  "mb_used",
-  "mb",
+  "rm_primary",
+  "qty_rm_primary",
+  "rm_secondary",
+  "qty_rm_secondary",
+  "mb_primary",
+  "qty_mb_primary",
+  "mb_secondary",
+  "qty_mb_secondary",
   "cycle_time_sec",
   "runner_weight",
   "no_of_cavity",
   "pcs_per_hour",
-  "remarks",
   "customer_order_quantity",
   "achived_quantity",
   "efficency",
   "raw_material_consuption_in_kgs",
-  "counter_reading"
+  "counter_reading",
+  "remarks"
  ],
  "fields": [
   {
@@ -63,29 +68,6 @@
    "in_list_view": 1,
    "label": "Mould No",
    "options": "Item"
-  },
-  {
-   "columns": 3,
-   "fieldname": "raw_material_used",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Raw Material Used",
-   "options": "Item"
-  },
-  {
-   "columns": 2,
-   "fieldname": "mb_used",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "MB Used",
-   "options": "Item"
-  },
-  {
-   "columns": 1,
-   "fieldname": "mb",
-   "fieldtype": "Percent",
-   "in_list_view": 1,
-   "label": "MB %"
   },
   {
    "columns": 2,
@@ -156,13 +138,67 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "COUNTER READING"
+  },
+  {
+   "fieldname": "rm_primary",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "RM Primary",
+   "options": "Item"
+  },
+  {
+   "fieldname": "qty_rm_primary",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty RM Primary"
+  },
+  {
+   "fieldname": "rm_secondary",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "RM Secondary",
+   "options": "Item"
+  },
+  {
+   "depends_on": "rm_secondary",
+   "fieldname": "qty_rm_secondary",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty RM Secondary"
+  },
+  {
+   "fieldname": "mb_primary",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "MB Primary",
+   "options": "Item"
+  },
+  {
+   "fieldname": "qty_mb_primary",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty MB Primary"
+  },
+  {
+   "fieldname": "mb_secondary",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "MB Secondary",
+   "options": "Item"
+  },
+  {
+   "depends_on": "mb_secondary",
+   "fieldname": "qty_mb_secondary",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty MB Secondary"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-06-06 22:39:11.736890",
+ "modified": "2026-06-13 20:53:46.691012",
  "modified_by": "Administrator",
  "module": "Propeluserp",
  "name": "Moulding Machine Details",

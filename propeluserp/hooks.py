@@ -8,12 +8,16 @@ app_license = "mit"
 # Fixtures: ensure custom fields are installed from the app instead of patches
 fixtures = [
 	{"doctype": "Custom Field",
-        "filters": [
-            [
-                "name",
-                "in",
-                [
-                    "Stock Entry-custom_column_break_atmq5",
+		"filters": [
+			[
+				"name",
+				"in",
+				[
+					"Stock Entry-custom_column_break_atmq5",
+					"Item-custom_moulding_rm_primary",
+					"Item-custom_moulding_rm_secondary",
+					"Item-custom_moulding_mb_primary",
+					"Item-custom_moulding_mb_secondary",
 					"Subcontracting Order-mould_asset",
 					"Subcontracting Order-mould_target_location",
 					"Subcontracting Order-asset_movement",
@@ -21,6 +25,10 @@ fixtures = [
 					"Stock Entry-mould_target_location",
 					"Stock Entry-custom_mould_assets",
 					"Stock Entry-asset_movement",
+					"Item-custom_moulding_rm_primary",
+					"Item-custom_moulding_rm_secondary",
+					"Item-custom_moulding_mb_primary",
+					"Item-custom_moulding_mb_secondary",
 				],
 			]
 		],
@@ -46,6 +54,8 @@ fixtures = [
 					"BOM-operations-allow_on_submit",
 					"BOM-with_operations-allow_on_submit",
 					"BOM-transfer_material_against-allow_on_submit",
+					"BOM Item-operation-allow_on_submit",
+					"BOM Item-uom-allow_on_submit",
 				],
 			],
 		],
@@ -187,6 +197,7 @@ app_include_js = ["/assets/propeluserp/js/bom_override.js"]
 doctype_js = {
 	"BOM": "public/js/bom_override.js",
 	"Item": "public/js/item_asset.js",
+	"Job Card": "public/js/job_card.js",
 	"Stock Entry": "public/js/stock_entry_asset_filters.js",
 }
 
