@@ -18,6 +18,7 @@ fixtures = [
 					"Item-custom_moulding_rm_secondary",
 					"Item-custom_moulding_mb_primary",
 					"Item-custom_moulding_mb_secondary",
+					"Item-custom_paints",
 					"Subcontracting Order-mould_asset",
 					"Subcontracting Order-mould_target_location",
 					"Subcontracting Order-asset_movement",
@@ -25,10 +26,6 @@ fixtures = [
 					"Stock Entry-mould_target_location",
 					"Stock Entry-custom_mould_assets",
 					"Stock Entry-asset_movement",
-					"Item-custom_moulding_rm_primary",
-					"Item-custom_moulding_rm_secondary",
-					"Item-custom_moulding_mb_primary",
-					"Item-custom_moulding_mb_secondary",
 				],
 			]
 		],
