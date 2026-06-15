@@ -7,111 +7,112 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "date",
   "toy_name",
-  "description",
-  "operation_no",
-  "operation_name",
-  "employee",
-  "cycle_time",
-  "qty",
-  "start_time",
-  "end_time",
-  "completed_qty",
-  "rejected_qty",
-  "status",
-  "remarks"
+  "manpower_used",
+  "target",
+  "achieve_qty",
+  "achieve_qty_cumulative",
+  "efficiency",
+  "profit_loss_qty",
+  "pl_amount",
+  "supervisor",
+  "shift"
  ],
  "fields": [
   {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
    "fieldname": "toy_name",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Toy Name",
+   "label": "Product Name",
    "options": "Item"
   },
   {
-   "fetch_from": "toy_name.item_name",
-   "fieldname": "description",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Description"
-  },
-  {
-   "fieldname": "operation_no",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Operation No",
-   "options": "Operation No"
-  },
-  {
-   "fieldname": "operation_name",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Operation Name",
-   "options": "Operation Name"
-  },
-  {
-   "fieldname": "employee",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Employee",
-   "options": "Employee"
-  },
-  {
-   "fieldname": "cycle_time",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Cycle Time(Seconds)"
-  },
-  {
-   "fieldname": "qty",
+   "columns": 1,
+   "fieldname": "manpower_used",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Total Qty"
+   "label": "Manpower Used"
   },
   {
-   "fieldname": "start_time",
-   "fieldtype": "Datetime",
-   "in_list_view": 1,
-   "label": "Start Time"
-  },
-  {
-   "fieldname": "end_time",
-   "fieldtype": "Datetime",
-   "in_list_view": 1,
-   "label": "End Time"
-  },
-  {
-   "fieldname": "completed_qty",
+   "columns": 1,
+   "fieldname": "target",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Completed Qty"
+   "label": "Target"
   },
   {
-   "fieldname": "rejected_qty",
+   "columns": 1,
+   "fieldname": "achieve_qty",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Rejected Qty"
+   "label": "Achieve Qty",
+   "reqd": 1
   },
   {
-   "fieldname": "status",
+   "columns": 1,
+   "fieldname": "achieve_qty_cumulative",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Achieve Qty Cumulative",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "efficiency",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Efficiency %",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "profit_loss_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Profit / Loss Qty",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "pl_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "P&L Amount (₹)",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supervisor",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "shift",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Status",
-   "options": "Pending\nCompleted"
-  },
-  {
-   "fieldname": "remarks",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Remarks"
+   "label": "Shift",
+   "options": "\nDay\nNight",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-06-06 22:37:33.840341",
+ "modified": "2026-06-14 00:00:00.000004",
  "modified_by": "Administrator",
  "module": "Propeluserp",
  "name": "Assembly Details",
