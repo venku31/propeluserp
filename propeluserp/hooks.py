@@ -42,6 +42,7 @@ fixtures = [
 					"Subcontracting Order-mould_asset",
 					"Subcontracting Order-mould_target_location",
 					"Subcontracting Order-asset_movement",
+					"Production Plan Sub Assembly Item-custom_supplier",
 					"Stock Entry-custom_column_break_0bkfh",
 					"Stock Entry-mould_target_location",
 					"Stock Entry-custom_mould_assets",
@@ -73,6 +74,7 @@ fixtures = [
 					"BOM-transfer_material_against-allow_on_submit",
 					"BOM Item-operation-allow_on_submit",
 					"BOM Item-uom-allow_on_submit",
+					"Production Plan Sub Assembly Item-supplier-hidden",
 					"Job Card-barcode-hidden",
 					"Job Card-main-field_order",
 					"Job Card-naming_series-default",
@@ -222,6 +224,7 @@ doctype_js = {
 	"BOM": "public/js/bom_override.js",
 	"Item": "public/js/item_asset.js",
 	"Job Card": "public/js/job_card.js",
+	"Production Plan": "public/js/production_plan.js",
 	"Stock Entry": "public/js/stock_entry_asset_filters.js",
 }
 
@@ -253,6 +256,12 @@ doc_events = {
 		"validate": "propeluserp.api.work_order.sync_required_item_operations_from_bom",
 		"before_save": "propeluserp.api.work_order.sync_required_item_operations_from_bom",
 		"before_submit": "propeluserp.api.work_order.sync_required_item_operations_from_bom",
+	},
+	"Production Plan": {
+		"before_validate": "propeluserp.api.production_plan.sync_custom_supplier",
+		"validate": "propeluserp.api.production_plan.sync_custom_supplier",
+		"before_save": "propeluserp.api.production_plan.sync_custom_supplier",
+		"before_submit": "propeluserp.api.production_plan.sync_custom_supplier",
 	},
 	"Asset Movement": {
 		"before_cancel": "propeluserp.propeluserp.doctype.propelus_settings.propelus_settings.apply_ignore_links_for_asset_movement",

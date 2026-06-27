@@ -6,7 +6,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "allow_cancel_and_delete_linked_bom"
+  "allow_cancel_and_delete_linked_bom",
+  "disable_in_house_work_order_for_sub_assembly",
+  "job_work_charges_item"
  ],
  "fields": [
   {
@@ -14,13 +16,25 @@
    "fieldname": "allow_cancel_and_delete_linked_bom",
    "fieldtype": "Check",
    "label": "Allow Cancel and Delete Linked BOM"
+  },
+  {
+   "default": "0",
+   "fieldname": "disable_in_house_work_order_for_sub_assembly",
+   "fieldtype": "Check",
+   "label": "Disable In house Work Order For Sub Assembly"
+  },
+  {
+   "fieldname": "job_work_charges_item",
+   "fieldtype": "Link",
+   "label": "Job work Charges Item",
+   "options": "Item"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-06-07 12:07:35.428740",
+ "modified": "2026-06-27 22:49:21.778398",
  "modified_by": "Administrator",
  "module": "Propeluserp",
  "name": "Propelus Settings",
