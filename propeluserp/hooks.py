@@ -42,6 +42,7 @@ fixtures = [
 					"Subcontracting Order-mould_asset",
 					"Subcontracting Order-mould_target_location",
 					"Subcontracting Order-asset_movement",
+					"Production Plan-custom_supplier",
 					"Production Plan Sub Assembly Item-custom_supplier",
 					"Stock Entry-custom_column_break_0bkfh",
 					"Stock Entry-mould_target_location",
@@ -231,6 +232,10 @@ doctype_js = {
 override_whitelisted_methods = {
 	"frappe.desk.form.linked_with.cancel_all_linked_docs":
 		"propeluserp.api.bom_cancel.cancel_all_linked_docs",
+}
+
+override_doctype_class = {
+	"Production Plan": "propeluserp.overrides.production_plan.CustomProductionPlan",
 }
 
 doc_events = {
